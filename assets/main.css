@@ -1,0 +1,52 @@
+.jumbotron {
+    background-color: #083161;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.jumbotron a {
+    color: white;
+}
+
+body {
+    margin: auto;
+    padding: 0;
+    color: #000;
+    -webkit-transition: all;
+    -moz-transition: all;
+    -ms-transition: all;
+    -o-transition: all;
+    transition: all;
+    font-size: 18px;
+    text-align: justify;
+    font-weight: 400
+}
+
+.container {
+    max-width: 950px;
+}
+
+.bitex{
+    border-radius: 5px;
+    background-color: aliceblue;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(230, 230, 230);
+    font-size: 15px;
+}
+code{
+    background-color: aliceblue
+}
+
+.spacing {
+    margin-top: 20px;
+}
+
+.btn-light{
+    border-width: 1px;
+    border-color: rgb(200, 200, 200);
+}
+
+.paper_snapshot {
+    max-width: 100%;
+}
