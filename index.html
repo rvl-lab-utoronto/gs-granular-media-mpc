@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8YEESN55E"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -17,7 +16,6 @@
 
     <link rel="shortcut icon" href="./assets/favicon.ico">
     <meta name="description" content="Gaussian Splatting Visual MPC for Granular Media Manipulation">
-    <!-- <meta name="keywords" content="CLA-NeRF,NeRF,Articulated Pose Estimation,Differentianle,Rendering,Neural"> -->
     <title>Gaussian Splatting Visual MPC for Granular Media Manipulation</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,13 +24,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic'
-		rel='stylesheet' type='text/css'>
-	<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Open+Sans&family=Roboto&display=swap"
-		rel="stylesheet"> -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
@@ -49,8 +40,6 @@
             padding: 25px;
         }
     </style>
-    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
-    <!-- <link rel="stylesheet" href="./assets/font.css"> -->
     <link rel="stylesheet" href="./assets/main.css">
 </head>
 
@@ -58,32 +47,34 @@
 
     <div class="jumbotron">
         <div class="container text-center">
-            <!-- <h1 style="color:white;margin-bottom:0;">CLA-NeRF</h1> -->
             <h3 style="color:white;margin-top:0;">Gaussian Splatting Visual MPC for Granular Media Manipulation</h3>
             <br>
-            <p style="color:white"><a>ICRA 2025 Submission</a><br>
-                <a href="https://weichengtseng.github.io/">Wei-Cheng Tseng</a>, <a href="#">Ellina Zhang</a>, <a href="https://krrish94.github.io/">Krishna Murthy Jatavallabhula</a>, <a href="https://www.cs.toronto.edu/~florian/">Florian Shkurti</a>
+            <p style="color:white"><a>ICRA 2025</a><br>
+                <a href="https://weichengtseng.github.io/">Wei-Cheng Tseng</a>, <a href="#">Ellina Zhang</a>, <a
+                    href="https://krrish94.github.io/">Krishna Murthy Jatavallabhula</a>, <a
+                    href="https://www.cs.toronto.edu/~florian/">Florian Shkurti</a>
                 <br>
         </div>
     </div>
 
-    <!-- <div class="container bg-3">
-        <div class="row">
-            <h2 class="text-center">Overview</h2>
-            <hr />
-            <div class="col-sm-10 col-sm-offset-1 text-center">
-                <img src="./assets/teaser_v7.png" id="teaser" class="img-responsive" alt="Image">
-            </div>
+    <div class="container bg-3">
+        <div class="text-center">
+            <a type="button" class="btn btn-light"
+                href="https://drive.google.com/file/d/1B0z9Md9calQsBvadhwdCKX7udSY7NPEW/view?usp=sharing"><i
+                    class="fa fa-video-camera" aria-hidden="true"></i> Video</a>&nbsp
+            <a type="button" class="btn btn-light" href="./assets/paper.pdf"><i class="fa fa-file-pdf-o"
+                    aria-hidden="true"></i> Paper </a>&nbsp
+            <a type="button" class="btn btn-light" href="./assets/appendix.pdf"><i class="fa fa-file-pdf-o"
+                    aria-hidden="true"></i> Appendix </a>&nbsp
+            <a type="button" class="btn btn-light" href="#"><i class="fa fa-github-alt" aria-hidden="true"></i> Code
+                (comming soon) </a>&nbsp
         </div>
-        <br>
-        <p>We present a framework that takes a few visual observations and corresponding camera poses as input; then, we can perform (a) view synthesis and (b) part segmentation from unseen viewpoints and articulated poses. Moreover, (c) the articulated
-            pose can be estimated via inversely optimizing the 3D deformation through our framework to match the target visual observation.
-        </p>
-    </div><br><br> -->
+    </div>
+
+
 
     <div class="container bg-3">
         <br>
-
         <div class="row">
             <h2 class="text-center">Overview</h2>
             <hr />
@@ -95,69 +86,53 @@
             <div class="container spacing">
             </div>
             <p>
-                Our method takes a few multi-view images of a scene and their corresponding camera poses as input (a) converts them into their Gaussian splatting representation, (b) learns a dynamics model over these representations, and (c) performs visual model-predictive control for granular material manipulation, which requires view synthesis and dynamics rollouts.
+                Our method takes a few multi-view images of a scene and their corresponding camera poses as input (a)
+                converts them into their Gaussian splatting representation, (b) learns a dynamics model over these
+                representations, and (c) performs visual model-predictive control for granular material manipulation,
+                which requires view synthesis and dynamics rollouts.
             </p>
         </div>
     </div><br><br>
 
     <div class="container bg-3">
         <br>
-    <div class="row">
-        <h2 class="text-center">Method</h2>
-        <hr />
-        <div class="col-sm-12 text-center">
-            <img src="./assets/overview_v5.png" class="img-responsive" style="width:100%" alt="Image">
-        </div>
-        <div class="container spacing">
-        </div>
-        <div class="container spacing">
-        </div>
-        <p>
-            <!-- (a) Our framework retrieves features from two instance as the condition of NeRF model and predicts color <b>c</b>, density <b>&sigma;</b> and segmentation <b>s</b>. The volume rendering is applied to predict rendered results.
-            (b) We calculate the deformation matrix based on the articulated pose. Then, we deform the sampled rays with the deformation matrix. Finally, the deformed visual image is rendered using our learned framework. 
-            (c) The articulated pose is estimated via inversely minimizing <b>L<sub>color</sub></b>. -->
-            Our method contains the following components.
-            (a) The dynamics model f, conditioned on the input action, predicts the temporal evolution of the scene representation. During planning time, we calculate the task objective and backpropagate the gradients to optimize the action sequence (b) The dynamics model f, conditioned on the input action , predicts the temporal evolution of the scene representation . During planning time, we calculate the task objective and backpropagate the gradients to optimize the action sequence such that the granular media can get closed to the target observations.
+        <div class="row">
+            <h2 class="text-center">Method</h2>
+            <hr />
+            <div class="col-sm-12 text-center">
+                <img src="./assets/overview_v5.png" class="img-responsive" style="width:100%" alt="Image">
+            </div>
+            <div class="container spacing">
+            </div>
+            <div class="container spacing">
+            </div>
+            <p>
+                Our method contains the following components.
+                (a) The dynamics model f, conditioned on the input action, predicts the temporal evolution of the scene
+                representation. During planning time, we calculate the task objective and backpropagate the gradients to
+                optimize the action sequence (b) The dynamics model f, conditioned on the input action , predicts the
+                temporal evolution of the scene representation . During planning time, we calculate the task objective
+                and backpropagate the gradients to optimize the action sequence such that the granular media can get
+                closed to the target observations.
 
-        </p>
-    </div>
-</div><br><br>
-
-
-<!-- <div class="container text-center">
-    <div class="row">
-        <div class="col">
-            <img src="assets/collection_peanuts.gif" class="img-responsive" style="width:100%" alt="Image">
+            </p>
         </div>
-        <div class="col">
-            <img src="assets/collection_pistocho.gif" class="img-responsive" style="width:100%" alt="Image">
-        </div>
-    </div>
-</div> -->
+    </div><br><br>
+
 
     <div class="container bg-3">
         <br>
-
         <div class="row">
             <h2 class="text-center">Novel-view Synthesis Results</h2>
             <hr />
             <p>
-                <!-- <b>Articulated View Systhesis</b>:  -->
-                <!-- We directly test our model on holdout objects generated with CAD
-                models. Here, we visulaize novel view synthesis, part segmentation, and deformarion results with
-                predicted joint attributes. -->
-                Our framework represent the granular material and the scene with Gaussian Splatting, which enables us do novel-view synthesis.
+                Our framework represent the granular material and the scene with Gaussian Splatting, which enables us do
+                novel-view synthesis.
             </p>
             <div class="col-sm-12 text-center">
                 <img src="./assets/novelview_v2.png" class="img-responsive" style="width:120%" alt="Image">
             </div>
-
         </div>
-
-        <!-- <hr />
-        <p>
-            <b>Articulated Pose Estimation </b> We show overlaid images of the rendered and observed images during the optimization of the articulated pose. These examples show that CLA-NeRF is able to recover real setting.
-        </p> -->
     </div><br><br>
 
 
@@ -167,79 +142,52 @@
             <h2 class="text-center">Real-World Manipulation Results</h2>
             <hr />
             <p>
-                <!-- <b>Articulated View Systhesis</b>: We directly test our model on real-world images without finetuning.
-                Here, we visulaize novel view synthesis, part segmentation, and deformarion results with predicted joint
-                attributes. -->
 
-                <b>Experimental  Setup</b>: The robotic manipulator, equipped with a pusher at the end-effector, moves object piles within the workspace. Four calibrated RGBD cameras mounted around the workspace provide visual observations of the environment. We show the results of following tasks.
+                <b>Experimental Setup</b>: The robotic manipulator, equipped with a pusher at the end-effector, moves
+                object piles within the workspace. Four calibrated RGBD cameras mounted around the workspace provide
+                visual observations of the environment. We show the results of following tasks.
 
                 <b>Splitting</b>: pushing the piles into multiple target regions.
                 <b>Collecting</b>: pushing the piles into a target region.
                 <br>
                 <br>
 
-                <b>Qualitative  Results</b>: We show the qualitative results below. From the results we got, granular material finally match the pattern of the target observation after manipulated from their initial configuration.
-                <div class="col-sm-12 text-center">
-                    <img src="./assets/realworld_qual_v5.png" class="img-responsive" style="width:120%" alt="Image">
-                </div>
+                <b>Qualitative Results</b>: We show the qualitative results below. From the results we got, granular
+                material finally match the pattern of the target observation after manipulated from their initial
+                configuration.
+            <div class="col-sm-12 text-center">
+                <img src="./assets/realworld_qual_v5.png" class="img-responsive" style="width:120%" alt="Image">
+            </div>
             </p>
 
-            
+
         </div>
 
         <hr />
 
         <p>
-            <b>Manipulation Visualization</b>: We show the manipulation recording here. After several pushes of manipulator, the granular media can reach the target region.
-
-
+            <b>Manipulation Visualization</b>: We show the manipulation recording here. After several pushes of
+            manipulator, the granular media can reach the target region.
         <div class="col-sm-12 text-center">
             <img src="./assets/realworld_split.gif" class="img-responsive" style="width:120%" alt="Image">
         </div>
 
-        <!-- <hr /> -->
-
-
         <div class="col-sm-12 text-center">
             <img src="./assets/realworld_colletion.gif" class="img-responsive" style="width:120%" alt="Image">
         </div>
-
         </p>
-
-        <!-- <p>
-            <b>Articulated Pose Estimation </b> We show overlaid images of the rendered and observed images during the
-            optimization of the articulated pose. These examples show that CLA-NeRF is able to recover real setting.
-        </p>
-        <div class="col-sm-12 text-center">
-            <img src="./assets/ape.gif" class="img-responsive" style="width:120%" alt="Image">
-        </div> -->
     </div>
     <br><br>
 
 
-
-
-
     <div class="container bg-3">
         <br>
-
         <div class="row">
-            <h2 class="text-center">Resource and Citation</h2>
+            <h2 class="text-center">Citation</h2>
             <hr />
-
-            <!-- <img class="paper_snapshot" src="./assets/all.png"> -->
             <div class="container spacing">
             </div>
-            <a type="button" class="btn btn-light" href="https://drive.google.com/file/d/1B0z9Md9calQsBvadhwdCKX7udSY7NPEW/view?usp=sharing"><i class="fa fa-video-camera"
-                    aria-hidden="true"></i> Video</a>&nbsp
-            <a type="button" class="btn btn-light" href="./assets/paper.pdf"><i class="fa fa-file-pdf-o"
-                    aria-hidden="true"></i> Paper </a>&nbsp
-            <a type="button" class="btn btn-light" href="./assets/appendix.pdf"><i class="fa fa-file-pdf-o"
-                    aria-hidden="true"></i> Summplmentary </a>&nbsp
-            <a type="button" class="btn btn-light" href="#"><i
-                    class="fa fa-github-alt" aria-hidden="true"></i> Code (comming soon) </a>&nbsp
-            <a type="button" class="btn btn-light" href="#"><i class="fa fa-database"></i> Dataset (comming soon)
-            </a>&nbsp
+
             <div class="container spacing">
             </div>
             <div class="bitex">
@@ -247,18 +195,14 @@
 					&ensp; @inproceedings{icra_submission_tseng,<br />
 					&ensp; &nbsp &nbsp author = {Wei-Cheng Tseng, Ellina Zhang, Krishna Murthy Jatavallabhula, Florian Shkurti},<br />
 					&ensp; &nbsp &nbsp title = {Granular Material Manipulation with Gaussian Splatting},<br />
-					<!-- &ensp; &nbsp &nbsp journal = {...},<br /> -->
-					&ensp; &nbsp &nbsp year = {2024}<br />
+					&ensp; &nbsp &nbsp booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},<br />
+					&ensp; &nbsp &nbsp year = {2025}<br />
 					&ensp; }
 				</code>
             </div>
         </div>
-
     </div><br><br>
 
 
-
-
 </body>
-
 </html>
